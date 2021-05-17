@@ -1,30 +1,46 @@
-package Hello;
-
-public class PrimeNumber {
+public class lotto {
 
 	public static void main(String[] args) {
-	
-	//Æ¯Á¤ÇÑ °ªÀ» ÀÔ·ÂÇÏ¸é ¼Ò¼ö¸¦ Ãâ·Â
-	//¼Ò¼ö´Â ÁöÁ¤¼ö¿Í 1À» Á¦¿ÜÇÑ ¼ö·Î ³ª´©¾î ¶³¾îÁöÁö ¾Ê´Â ¼ö
-	//³ª´©¾î ¶³¾îÁöÁö ¾ÊÀ¸·Á¸é %2 = 0ÀÌ µÇ¾î¾ßÇÔ
+		//ë²ˆí˜¸ê°€ ì €ì¥ë  ë°°ì—´ë§Œë“¤ê¸°
+		//ë²ˆí˜¸ìƒì„±(ëœë¤ë²ˆí˜¸)
+		//ì¤‘ë³µ íŒŒì•… í›„ ì €ì¥
+		//ì¶œë ¥
 		
-		int value = 9;
-		int div = 2;
-		boolean IsPN = true;
+		int nNumber;
+		int[] arLotto = new int[6]; // ëœë¤ê°’ì´ ì €ì¥ë  ë°°ì—´
+		int pos = 0;
 		
-		for(int i=0; i<value-2; i++) {
-			if(value%div == 0) {
-				IsPN = false;
-				break;
+		boolean isExist = false;
+		
+		//2. ë²ˆí˜¸ ìƒì„±
+		while(pos < arLotto.length)
+		{
+			nNumber = (int)(Math.random() * 45) +1; // 1~45
+			
+			for(int i = 0; i < 6; i++)
+			{
+				//ì´ë¯¸ ê·¸ ë²ˆí˜¸ê°€ ì¡´ì¬í•¨.
+				if(nNumber == arLotto[i])
+				{
+					isExist = true;
+					break;
+				}
+			//3. ì¡´ì¬í•˜ì§€ ì•ŠëŠ” ë²ˆí˜¸ë¼ë©´ ë°°ì—´ì— ì €ì¥, pos++;	
 			}
-			div++;
+			if (isExist == false)
+			{
+				// í…Œì´ë¸”ì— ì €ì¥
+				arLotto[pos] = nNumber;
+				pos++;
+			}
+			else
+			{
+				isExist = true;
+			}
 		}
-	    if(IsPN) {
-	    	System.out.println("¼Ò¼ö");
-	    }
-	    else {
-	    	System.out.println("ÇÕ¼º¼ö");
-	    }      	
-	}
-
-}
+		for(int i = 0; i < arLotto.length; i++)
+		{
+			System.out.println(arLotto[i]);
+		}
+	}	
+}		
