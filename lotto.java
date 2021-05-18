@@ -3,7 +3,7 @@ public class Lotto
 	int[] marNumber = new int[6]; // 추상화
 	// 필요한 데이터 값
 	
-	Lotto3() // 생성자
+	Lotto() // 생성자
 	{
 		//추가적인 코드는 여기에 작성.
 	}
