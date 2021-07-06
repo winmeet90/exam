@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang='ko'>
+
+<head>
+    <meta charset="utf-8">
+    <title> TEST </title>
+    <script>    
+
+    //1. 1초마다 ‘Hello’를 5초간 console에 출력하는 코드를 만드시오
+
+        //1-1. 'hello'를 출력하는 함수 생성
+
+            const printHello = function()
+            {
+                console.log('Hello !')
+            }
+        //1-2. 5초 후 타임아웃 되는 함수 생성
+
+            const timeoutHello = function()
+            {
+                clearTimeout(helloID)
+                console.log("Clear interval !")
+            }
+
+        //1-3. 1초에 한번씩 출력 할 수 있도록 인터벌 생성.
+
+            const helloID = setInterval(printHello, 1 * 1000)
+            
+        //1-4. 타임아웃 함수 호출
+            
+            setTimeout(timeoutHello, 5 * 1000)
+
+
+    //2.2단의 각 곱하기 연산을 1초마다 한번씩 출력하는 코드를 만드시오
+
+        //2-1. 2단을 출력하는 함수 생성
+
+            const dan = function()
+            {   
+                console.log((`2 X ${mul} = ${2 * mul}`))
+                mul++
+            }
+        //2-2. 타임아웃 함수 생성
+            const kill = function()
+            {
+                clearTimeout(dan2)
+                console.log(`9단 출력 끝`)
+            }
+            
+            let mul = 1;
+
+        //2-3. 2단을 출력하는 함수를 1초마다 출력하는 함수 생성
+
+            const dan2 = setInterval(dan, 1 * 1000)
+
+        //2-4. 1초마다 1단씩 출력하므로 9단까지 출력하도록 9초로 타임아웃 설정.
+
+            //settimeout 함수에는 cleartimeout의 함수가 들어가야함.
+            setTimeout(kill, 9 * 1000)
+
+    </script>
+    
+    
+
+</head>
+
+<body>
+    
+    
+</body>
+
+</html>
