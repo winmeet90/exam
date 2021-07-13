@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="kr">
+    <head>
+        <meta charset="UTF-8">
+        <title> test </title>
+        
+
+
+          <script>
+       
+            
+         </script>
+
+    </head>
+    <body>
+        
+      
+
+        <script>
+            
+            // 객체를 생성하는 코드
+            const textarea = document.createElement('h1')
+            const text = document.createTextNode('h1을 동적으로 넣었습니다.')
+            textarea.appendChild(text)
+
+            //바디에 h1을 추가하는 코드
+            document.body.appendChild(textarea)
+
+            const colorchange = document.querySelectorAll('h1')
+            colorchange[0].style.color = 'white'
+            colorchange[0].style.backgroundColor = 'black'
+            // colorchange[0] 라는 객체의 부모객체의 자식 객체를 삭제하라. (h1을 삭제하라.)
+            setTimeout(() => {colorchange[0].parentNode.removeChild(colorchange[0])}, 2 * 1000);
+
+            
+            
+        </script>
+
+    </body>
+   
+    
+</html>
